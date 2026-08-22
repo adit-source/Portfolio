@@ -1,4 +1,4 @@
-# Aditya Kumar — Data Analyst Portfolio
+# Aditya Kumar — Portfolio
 
 A professional, responsive Data Analyst portfolio website built with HTML, CSS, Tailwind CSS CDN, and Alpine.js.
 
