@@ -5,7 +5,7 @@ A professional, responsive Data Analyst portfolio website built with HTML, CSS, 
 ## Project structure
 
 ```text
-aditya-data-analyst-portfolio/
+Portfolio/
 ├── index.html
 ├── README.md
 ├── .gitignore
