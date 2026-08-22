@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{dark: localStorage.getItem('theme') === 'dark', scrolled: false, mobile: false, toggleTheme(){ this.dark = !this.dark; document.documentElement.classList.toggle('dark', this.dark); localStorage.setItem('theme', this.dark ? 'dark' : 'light'); }, initTheme(){ document.documentElement.classList.toggle('dark', this.dark); } }" x-init="initTheme(); $watch('dark', value => { document.documentElement.classList.toggle('dark', value); localStorage.setItem('theme', value ? 'dark' : 'light'); }); window.addEventListener('scroll', () => scrolled = window.scrollY > 24);">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Aditya Kumar — Data Analyst Portfolio">
+<title>Aditya Kumar — Data Analyst</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['PT Sans','sans-serif'],body:['DM Sans','sans-serif']},colors:{accent:'#FF6B2B','accent2:'#FF8F5C'}}}}</script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
+<div id="progress" class="progress"></div>
+<header class="fixed top-0 left-0 right-0 z-50" :class="scrolled?'scrolled bg-white/90 dark:bg-zinc-950/90 backdrop-blur-xl shadow-sm':'bg-transparent'">
+<nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+<a href="#home" class="font-display font-bold text-xl tracking-tight"><span>aditya</span><span class="text-[#FF6B2B]">.</span><span class="font-normal text-zinc-500">kumar</span></a>
+<div class="hidden md:flex items-center gap-8 text-sm">
+<a class="navline" href="#work">Work</a><a class="navline" href="#skills">Skills</a><a class="navline" href="#about">About</a><a class="navline" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-3">
+<a href="#contact" class="hidden sm:inline-flex btn bg-[#FF6B2B] text-white px-5 py-2.5 rounded-full text-sm font-medium">Let's connect →</a>
+<button @click="mobile=!mobile" class="md:hidden w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800">☰</button>
+</div>
+</nav>
+<div x-show="mobile" x-cloak class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+<div class="px-6 py-5 flex flex-col gap-4"><a href="#work" @click="mobile=false">Work</a><a href="#skills" @click="mobile=false">Skills</a><a href="#about" @click="mobile=false">About</a><a href="#contact" @click="mobile=false">Contact</a></div></div>
+</header>
+
+<main class="relative z-10">
+<section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-[1.2fr_.8fr] gap-14 items-center">
+<div>
+<p class="reveal text-[#FF6B2B] text-xs font-semibold uppercase tracking-[.22em] mb-5">Data Analyst · Computer Engineer</p>
+<h1 class="reveal font-display font-bold text-5xl md:text-7xl leading-[.98] tracking-tight">Turning <span class="text-[#FF6B2B]">raw data</span> into decisions worth acting on.</h1>
+<p class="reveal mt-7 text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl leading-relaxed">I clean, analyze and visualize messy datasets using SQL, Python, Power BI, Tableau and Excel — turning numbers into clear business insights.</p>
+<div class="reveal flex flex-wrap gap-3 mt-8">
+<a href="#work" class="btn bg-zinc-950 dark:bg-white dark:text-zinc-950 text-white px-6 py-3 rounded-full text-sm font-medium">Explore my work →</a>
+<a href="#contact" class="btn border border-zinc-300 dark:border-zinc-700 px-6 py-3 rounded-full text-sm font-medium">Get in touch</a>
+<a href="https://github.com/adit-source" target="_blank" class="btn border border-zinc-300 dark:border-zinc-700 px-5 py-3 rounded-full text-sm">GitHub ↗</a>
+</div>
+<div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-3 mt-12 max-w-2xl">
+<div class="min-w-0 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4"><b class="block text-2xl">10+</b><p class="text-xs text-zinc-500 mt-1 leading-tight">Analytics projects</p></div>
+<div class="min-w-0 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4"><b class="block text-2xl">5+</b><p class="text-xs text-zinc-500 mt-1 leading-tight">Core tools</p></div>
+<div class="min-w-0 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4"><b class="block text-2xl">04</b><p class="text-xs text-zinc-500 mt-1 leading-tight">Case studies</p></div>
+<div class="min-w-0 bg-white/80 dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4"><b class="block text-2xl">2026</b><p class="text-xs text-zinc-500 mt-1 leading-tight">Graduation</p></div>
+</div>
+</div>
+<div class="reveal photo">
+<div class="rounded-[30px] overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-2 shadow-2xl">
+<img src="assets/images/profile.jpg" alt="Aditya Kumar — Data Analyst" loading="eager" class="w-full aspect-[4/5] object-cover rounded-[24px]">
+</div>
+</div>
+</div>
+</section>
+
+<section id="work" class="py-24">
+<div class="max-w-6xl mx-auto px-6">
+<div class="flex items-end justify-between mb-10"><div><p class="text-[#FF6B2B] text-xs uppercase tracking-[.2em] mb-2">Selected work</p><h2 class="text-4xl md:text-5xl font-bold">Projects</h2></div><span class="text-sm text-zinc-400">04 case studies</span></div>
+<div class="grid lg:grid-cols-3 gap-6">
+<div class="card border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden bg-zinc-50 dark:bg-zinc-900">
+<div class="h-48 bg-gradient-to-br from-red-100 via-white to-orange-100 dark:from-red-950 dark:via-zinc-900 dark:to-orange-950 p-6 flex items-end"><div class="text-5xl font-display font-bold text-red-500">AI</div></div>
+<div class="p-7"><div class="flex flex-wrap gap-2 mb-4"><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">Python</span><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">LLM</span><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">AI</span></div>
+<h3 class="text-2xl font-bold mb-3">Internship Scam Detection with AI + LLM</h3><p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Built a fraud-detection project using the Internship Scam Dataset to classify suspicious internship opportunities and generate AI-assisted explanations for risky postings.</p>
+<ul class="mt-5 space-y-2 text-sm text-zinc-600 dark:text-zinc-400"><li>→ Data cleaning, feature engineering and scam pattern analysis</li><li>→ ML-based detection for suspicious internship listings</li><li>→ LLM-powered insights for explainable scam detection and summaries</li></ul><a href="https://github.com/adit-source/Internship-Scam-Analysis.git" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 bg-[#FF6B2B] text-white px-4 py-2.5 rounded-full text-sm font-medium hover:bg-orange-600 transition">View on GitHub ↗</a></div></div>
+
+<div class="card border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden bg-zinc-50 dark:bg-zinc-900">
+<div class="h-48 bg-gradient-to-br from-orange-100 via-white to-zinc-200 dark:from-orange-950 dark:via-zinc-900 dark:to-zinc-800 p-6 flex items-end"><div class="text-5xl font-display font-bold text-[#FF6B2B]">BI</div></div>
+<div class="p-7"><div class="flex flex-wrap gap-2 mb-4"><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">Power BI</span><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">DAX</span><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">Forecasting</span></div>
+<h3 class="text-2xl font-bold mb-3">E-Commerce Sales & Forecast Dashboard</h3><p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Interactive two-page dashboard covering region, state, segment, category, shipping and payment behavior with KPIs and 15-day sales forecasting.</p>
+<ul class="mt-5 space-y-2 text-sm text-zinc-600 dark:text-zinc-400"><li>→ Sales, profit, quantity & average delivery KPIs</li><li>→ Dynamic slicers and cross-filtering</li><li>→ 95% confidence forecasting</li></ul><a href="https://github.com/adit-source/PowerBI-Sales-Forecast" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 bg-[#FF6B2B] text-white px-4 py-2.5 rounded-full text-sm font-medium hover:bg-orange-600 transition">View on GitHub ↗</a></div></div>
+
+<div class="card border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden bg-zinc-50 dark:bg-zinc-900">
+<div class="h-48 bg-gradient-to-br from-amber-100 via-white to-zinc-200 dark:from-amber-950 dark:via-zinc-900 dark:to-zinc-800 p-6 flex items-end"><div class="text-5xl font-display font-bold text-amber-600">FD</div></div>
+<div class="p-7"><div class="flex flex-wrap gap-2 mb-4"><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">Excel</span><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">PivotTables</span><span class="tag text-xs px-3 py-1 rounded-full bg-orange-50 text-[#FF6B2B]">VBA</span></div>
+<h3 class="text-2xl font-bold mb-3">Finance Dashboard Project</h3><p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Interactive Excel dashboard that transforms raw data into clear visualizations for KPI monitoring, trend analysis and dynamic reporting.</p>
+<ul class="mt-5 space-y-2 text-sm text-zinc-600 dark:text-zinc-400"><li>→ KPI and performance tracking with visual summaries</li><li>→ Interactive charts, filters and data exploration</li><li>→ Refreshable macro-enabled workbook with VBA</li></ul><a href="https://github.com/adit-source/Finance-Dashboard-Project-Excel.git" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 bg-[#FF6B2B] text-white px-4 py-2.5 rounded-full text-sm font-medium hover:bg-orange-600 transition">View on GitHub ↗</a></div></div>
+
+
+</div>
+</div>
+</section>
+
+<section id="skills" class="py-24 bg-zinc-50 dark:bg-zinc-900/60 border-y border-zinc-200 dark:border-zinc-800">
+<div class="max-w-6xl mx-auto px-6">
+<p class="text-[#FF6B2B] text-xs uppercase tracking-[.2em] mb-2">Toolkit</p><h2 class="text-4xl md:text-5xl font-bold mb-10">Skills & background</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="card bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6"><h3 class="text-xl font-bold mb-4">AI & Generative AI</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Generative AI</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">LLM</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Prompt Engineering</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">AI Model Evaluation</span></div></div>
+<div class="card bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6"><h3 class="text-xl font-bold mb-4">Power BI</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Power BI</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">DAX</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Dashboard Design</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">KPI Analysis</span></div></div>
+<div class="card bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6"><h3 class="text-xl font-bold mb-4">SQL</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">SQL</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Queries</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Joins</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Data Cleaning</span></div></div>
+<div class="card bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6"><h3 class="text-xl font-bold mb-4">Python</h3><div class="flex flex-wrap gap-2"><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Pandas</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">NumPy</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Matplotlib</span><span class="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-full text-sm">Seaborn</span></div></div>
+</div>
+<div id="about" class="grid md:grid-cols-2 gap-8 mt-8">
+<div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-7"><p class="text-[#FF6B2B] text-xs uppercase tracking-widest">Education</p><h3 class="text-2xl font-bold mt-3">B.Tech, Computer Engineering</h3><p class="text-zinc-500 mt-2">2022 – 2026 · Rajkot, Gujarat</p><div class="border-t border-zinc-200 dark:border-zinc-800 mt-5 pt-5"><b>Senior Secondary (Class XII)</b><p class="text-zinc-500 text-sm mt-1">2020 – 2022 · BSEB</p></div></div>
+<div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-7"><p class="text-[#FF6B2B] text-xs uppercase tracking-widest">About me</p><h3 class="text-2xl font-bold mt-3">Curious about the story behind the numbers.</h3><p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mt-3">I enjoy turning unstructured business questions into clean datasets, useful dashboards and concise insights. I’m looking for an entry-level Data Analyst opportunity where I can learn fast and contribute from day one.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="py-24">
+<div class="max-w-6xl mx-auto px-6">
+<div class="rounded-[32px] bg-zinc-950 dark:bg-black text-white p-8 md:p-14 overflow-hidden relative">
+<div class="absolute -right-20 -top-20 w-72 h-72 bg-[#FF6B2B]/20 blur-3xl rounded-full"></div>
+<div class="relative z-10"><p class="text-[#FF8F5C] text-xs uppercase tracking-[.2em]">Open to opportunities</p><h2 class="text-4xl md:text-6xl font-bold mt-3">Let’s talk data.</h2><p class="text-zinc-400 max-w-2xl mt-5 text-lg">Looking for an entry-level Data Analyst role. Happy to discuss projects, dashboards, SQL analysis or a quick case study.</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-10">
+<a class="border border-zinc-700 rounded-2xl p-5 hover:border-[#FF6B2B] transition" href="mailto:adityaoffice024@gmail.com"><small class="text-zinc-500">EMAIL</small><div class="mt-2 break-all">adityaoffice024@gmail.com</div></a>
+<a class="border border-zinc-700 rounded-2xl p-5 hover:border-[#FF6B2B] transition" href="tel:+917762018946"><small class="text-zinc-500">PHONE</small><div class="mt-2">+91 77620 18946</div></a>
+<a class="border border-zinc-700 rounded-2xl p-5 hover:border-[#FF6B2B] transition" href="https://linkedin.com/in/adityakumar024" target="_blank"><small class="text-zinc-500">LINKEDIN</small><div class="mt-2">/in/adityakumar024 ↗</div></a>
+<a class="border border-zinc-700 rounded-2xl p-5 hover:border-[#FF6B2B] transition" href="https://github.com/adit-source" target="_blank"><small class="text-zinc-500">GITHUB</small><div class="mt-2">/adit-source ↗</div></a>
+</div></div></div>
+<footer class="flex justify-between gap-4 py-8 text-sm text-zinc-500"><span>Aditya Kumar — Data Analyst</span><span>English · Hindi · © 2026</span></footer>
+</div>
+</section>
+</main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
